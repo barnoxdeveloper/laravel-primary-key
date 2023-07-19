@@ -28,14 +28,14 @@ class ProductWithUlidController extends Controller
                                                 title="Edit"
                                                 data-id="'.$data->id.'"
                                                 class="btn btn-warning btn-sm edit me-3">
-                                                <i class="far fa-edit"></i>
+                                                Edit
                                                 </a>';
                                     $button .= '<a href="javascript:void(0)"
                                                 data-toggle="tooltip"
                                                 title="Delete"
                                                 data-id="'.$data->id.'"
                                                 class="btn btn-danger btn-sm delete">
-                                                <i class="far fa-trash-alt"></i>
+                                                Delete
                                                 </a>';
                                     return $button;
                                 })
@@ -63,9 +63,9 @@ class ProductWithUlidController extends Controller
         }
         ProductWithUlid::updateOrCreate(['id' => $id],
         [
-            'name' => $request->sales_id,
-            'price' => $request->pic,
-            'color' => $request->company,
+            'name' => $request->name,
+            'price' => $request->price,
+            'color' => $request->color,
         ]);
         return response()->json([
             'code' => 200,
